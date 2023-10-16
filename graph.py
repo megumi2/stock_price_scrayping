@@ -2,9 +2,9 @@ import openpyxl
 import pandas as pd
 import datetime
 import re
-from openpyxl.chart import Reference
-from openpyxl.chart.axis import DateAxis
 import matplotlib.pyplot as plt
+
+
 
 #日程を取得
 date = datetime.datetime.now()
@@ -43,9 +43,8 @@ for index, row in conbine_df.iterrows():
     plt.title("株価比較")
     plt.xlabel("日付")
     plt.ylabel("株価")
-
-    plt.savefig(f'株価推移グラフ_{index}_{date.month}月.png')
+    #グラフをpdfで保存
+    plt.savefig(f'株価推移グラフ_{index}_{date.month}月.pdf')
     plt.show()
 
 #グラフをPDF化
-
